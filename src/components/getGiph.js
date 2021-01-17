@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 
+
 function GetGiph() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+
   useEffect(() => {
     const fetchData = async () => {
       setIsError(false);
@@ -35,7 +38,7 @@ function GetGiph() {
     if (isLoading) {
       return <Loader />;
     }
-    return data.map((el) => {
+    return data.map(el=> {
       return (
         <div key={el.id} className="gifs">
           <img src={el.images.fixed_height.url} />
@@ -72,7 +75,7 @@ function GetGiph() {
         },
       });
       setData(results.data.data);
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (err) {
       setIsError(true);
       setTimeout(() => setIsError(false), 4000);
@@ -80,6 +83,9 @@ function GetGiph() {
 
     setIsLoading(false);
   };
+
+ 
+
   return (
     <div className="m-2">
       {renderError()}
@@ -99,6 +105,8 @@ function GetGiph() {
           Search
         </button>
       </form>
+
+     
       <div className="container">{renderGifs()}</div>
     </div>
   );
