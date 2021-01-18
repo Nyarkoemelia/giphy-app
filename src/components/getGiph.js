@@ -47,7 +47,7 @@ function GetGiph() {
       return (
           <Col>
         <div key={el.id} className="gif">
-          <img src={el.images.fixed_height.url} />
+          <img src={el.images.fixed_height.url} alt="" />
           
         </div>
         
