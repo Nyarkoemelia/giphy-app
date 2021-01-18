@@ -11,6 +11,7 @@ function GetGiph() {
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const[visible, setVisible]=useState(10)
   
 
 
@@ -42,15 +43,19 @@ function GetGiph() {
     if (isLoading) {
       return <Loader />;
     }
-    return data.map(el=> {
+    return data.slice(0,visible).map(el=> {
       return (
           <Col>
         <div key={el.id} className="gif">
           <img src={el.images.fixed_height.url} />
+          
         </div>
+        
         </Col>
+        
       );
-    });
+    })
+    ;
   };
   const renderError = () => {
     if (isError) {
@@ -90,7 +95,9 @@ function GetGiph() {
     setIsLoading(false);
   };
 
- 
+ const showMoreData=()=>{
+     setVisible((prevValue)=> prevValue +5);
+ }
 
   return (
     <div className="m-2">
@@ -110,10 +117,14 @@ function GetGiph() {
         >
           Search
         </Button>
+
       </Form>
+      
 
      
       <div className="container gifs">{renderGifs()}</div>
+      <Button onClick={showMoreData}>Load More</Button>
+        
       
     </div>
     
@@ -121,5 +132,3 @@ function GetGiph() {
 }
 
 export default GetGiph;
-
-

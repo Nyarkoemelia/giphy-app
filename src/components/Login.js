@@ -39,7 +39,7 @@ function Login() {
             <h2>Hey there! You are logged in!</h2>
             </div>
             <Home/>  
-            <button onClick={handleLoggedout}>Log out</button>
+            <Button onClick={handleLoggedout}>Log out</Button>
             </>
             :
             <>
