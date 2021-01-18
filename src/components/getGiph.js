@@ -45,17 +45,8 @@ function GetGiph() {
     return data.map(el=> {
       return (
           <Col>
-          <div className="column">
-          <div className="column">
-          <div className="column">
-              <div className="row">
-        <div key={el.id} className="gifs">
+        <div key={el.id} className="gif">
           <img src={el.images.fixed_height.url} />
-          
-          </div>
-          </div>
-        </div>
-        </div>
         </div>
         </Col>
       );
@@ -90,7 +81,7 @@ function GetGiph() {
         },
       });
       setData(results.data.data);
-      setIsLoading(false);
+     
     } catch (err) {
       setIsError(true);
       setTimeout(() => setIsError(false), 4000);
@@ -122,7 +113,7 @@ function GetGiph() {
       </Form>
 
      
-      <div className="container">{renderGifs()}</div>
+      <div className="container gifs">{renderGifs()}</div>
       
     </div>
     
