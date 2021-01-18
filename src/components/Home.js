@@ -3,8 +3,8 @@ import GetGiph from './GetGiph'
 
 function home() {
     return (
-        <div>
-            <h1>Homeeeeeeeeee</h1>
+        <div className="header">
+            <p>Welcome home</p>
 
             <GetGiph/>
         </div>

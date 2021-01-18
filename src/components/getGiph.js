@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import { Form, Col, Button } from "react-bootstrap";
+
+
 
 
 function GetGiph() {
@@ -8,6 +11,7 @@ function GetGiph() {
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  
 
 
   useEffect(() => {
@@ -40,9 +44,20 @@ function GetGiph() {
     }
     return data.map(el=> {
       return (
+          <Col>
+          <div className="column">
+          <div className="column">
+          <div className="column">
+              <div className="row">
         <div key={el.id} className="gifs">
           <img src={el.images.fixed_height.url} />
+          
+          </div>
+          </div>
         </div>
+        </div>
+        </div>
+        </Col>
       );
     });
   };
@@ -89,7 +104,7 @@ function GetGiph() {
   return (
     <div className="m-2">
       {renderError()}
-      <form className="form-inline justify-content-center m-2">
+      <Form className="form-inline justify-content-center m-2">
         <input
           value={search}
           onChange={handleSearchChange}
@@ -97,19 +112,23 @@ function GetGiph() {
           placeholder="search"
           className="form-control"
         />
-        <button
+        <Button
           onClick={handleSubmit}
           type="submit"
           className="btn btn-primary mx-2"
         >
           Search
-        </button>
-      </form>
+        </Button>
+      </Form>
 
      
       <div className="container">{renderGifs()}</div>
+      
     </div>
+    
   );
 }
 
 export default GetGiph;
+
+

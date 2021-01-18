@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Home from  './Home'
+import { Form,  Button } from "react-bootstrap";
 
 
 
@@ -34,14 +35,16 @@ function Login() {
             {loggedin
             ?
             <>
-
-            <p>Hey there! You are logged in!</p>
+            <div className="welcome">
+            <h2>Hey there! You are logged in!</h2>
+            </div>
             <Home/>  
             <button onClick={handleLoggedout}>Log out</button>
             </>
             :
             <>
-            <form>
+            <div style={{marginTop: "30px"}} className="login">
+            <Form>
               <label>Email</label>
              <input type="Email" value={email} onChange={handleEmail}></input>
 
@@ -49,9 +52,10 @@ function Login() {
              <input type="Password" value={password} onChange={handlePassword}></input>
 
             <br></br>
-            <button onClick={handleLoggedin}>Login</button>
+            <Button onClick={handleLoggedin}>Login</Button>
 
-                </form>
+                </Form>
+                </div>
                 </>}
         </div>
     )
