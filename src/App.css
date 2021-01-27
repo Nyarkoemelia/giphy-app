@@ -1,9 +1,7 @@
 /* @import "~bootstrap/css/bootstrap"; */
 
-
 body {
-  background-color:white;
-
+  background-color: white;
 }
 
 .gifs {
@@ -19,46 +17,44 @@ body {
 }
 
 .loader {
-  color: blue;}
+  color: blue;
+}
 
-  .login{
-    text-align:center ;
-    justify-content: center;
-    margin: 0 auto;
-    display: flex;
-    margin-left:10%;
-    
-    
-  }
-  .header{
-    width: 70%;
-      margin-left: 15%;
-      background: #00000078;
-      line-height: 4vh;
-      color: white;
-      border-radius: 10px;
-      position: absolute;
-      top: 200px;
-  }
-  .welcome{
-    width: 70%;
-      margin-left: 15%;
-      background: #00000078;
-      line-height: 5vh;
-      color: white;
-      border-radius: 10px;
-      position: absolute;
-      top: 100px;
+.login {
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+  margin-left: 10%;
+}
+.header {
+  width: 70%;
+  margin-left: 15%;
+  background: #00000078;
+  line-height: 4vh;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 200px;
+}
+.welcome {
+  width: 70%;
+  margin-left: 15%;
+  background: #00000078;
+  line-height: 5vh;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+}
+column {
+  float: left;
+  width: 33.33%;
+}
 
-  }
-  column {
-    float: left;
-    width: 33.33%;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

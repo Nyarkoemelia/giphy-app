@@ -3,17 +3,12 @@ import axios from "axios";
 import Loader from "./Loader";
 import { Form, Col, Button } from "react-bootstrap";
 
-
-
-
 function GetGiph() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const[visible, setVisible]=useState(10)
-  
-
+  const [visible, setVisible] = useState(10);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,19 +38,15 @@ function GetGiph() {
     if (isLoading) {
       return <Loader />;
     }
-    return data.slice(0,visible).map(el=> {
+    return data.slice(0, visible).map((el) => {
       return (
-          <Col>
-        <div key={el.id} className="gif">
-          <img src={el.images.fixed_height.url} alt="" />
-          
-        </div>
-        
+        <Col>
+          <div key={el.id} className="gif">
+            <img src={el.images.fixed_height.url} alt="" />
+          </div>
         </Col>
-        
       );
-    })
-    ;
+    });
   };
   const renderError = () => {
     if (isError) {
@@ -86,7 +77,6 @@ function GetGiph() {
         },
       });
       setData(results.data.data);
-     
     } catch (err) {
       setIsError(true);
       setTimeout(() => setIsError(false), 4000);
@@ -95,9 +85,9 @@ function GetGiph() {
     setIsLoading(false);
   };
 
- const showMoreData=()=>{
-     setVisible((prevValue)=> prevValue +5);
- }
+  const showMoreData = () => {
+    setVisible((prevValue) => prevValue + 5);
+  };
 
   return (
     <div className="m-2">
@@ -117,17 +107,11 @@ function GetGiph() {
         >
           Search
         </Button>
-
       </Form>
-      
 
-     
       <div className="container gifs">{renderGifs()}</div>
       <Button onClick={showMoreData}>Load More</Button>
-        
-      
     </div>
-    
   );
 }
 

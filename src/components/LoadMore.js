@@ -1,12 +1,7 @@
-import React,{ useState } from 'react'
+import React, { useState } from "react";
 
 function LoadMore() {
-    
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }
 
-export default LoadMore
+export default LoadMore;
