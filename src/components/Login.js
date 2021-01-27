@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
-import Home from  './Home'
+import {useHistory} from "react-router-dom";
 import { Form,  Button } from "react-bootstrap";
 
 
 
 function Login() {
+
+    let history=useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loggedin, setLoggedin] = useState(false)
@@ -22,6 +24,7 @@ function Login() {
         event.preventDefault()
         if(email==="ben@gmail.com"&& password==="9876")
         setLoggedin(true)
+        history.push("/home")
     }
 
     const handleLoggedout=(event)=>{
@@ -38,7 +41,7 @@ function Login() {
             <div className="welcome">
             <h2>Hey there! You are logged in!</h2>
             </div>
-            <Home/>  
+           
             <></>
             <Button onClick={handleLoggedout}>Log out</Button>
             </>
