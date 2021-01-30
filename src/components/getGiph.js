@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
-import { Form, Col, Button } from "react-bootstrap";
+import { Form,  Button } from "react-bootstrap";
 
 function GetGiph() {
   const [data, setData] = useState([]);
@@ -40,11 +40,11 @@ function GetGiph() {
     }
     return data.slice(0, visible).map((el) => {
       return (
-        <Col>
-          <div key={el.id} className="gif">
+        
+          <div key={el.id} className="gif" >
             <img src={el.images.fixed_height.url} alt="" />
           </div>
-        </Col>
+        
       );
     });
   };
